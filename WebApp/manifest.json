@@ -1,0 +1,52 @@
+{
+	"name": "TesteSW",
+	"short_name": "TesteSW",
+	"description": "description details about app TesteSW.",
+	"icons": [
+		{
+			"src": "img/teste0.png",
+			"sizes": "72x72",
+			"type": "image/png"
+		},
+		{
+			"src": "img/teste1.png",
+			"sizes": "96x96",
+			"type": "image/png"
+		},
+		{
+			"src": "img/teste2.png",
+			"sizes": "128x128",
+			"type": "image/png"
+		},
+		{
+			"src": "img/teste3.png",
+			"sizes": "144x144",
+			"type": "image/png"
+		},
+		{
+			"src": "img/teste4.png",
+			"sizes": "152x152",
+			"type": "image/png"
+		},
+		{
+			"src": "img/teste5.png",
+			"sizes": "192x192",
+			"type": "image/png"
+		},
+		{
+			"src": "img/teste6.png",
+			"sizes": "384x384",
+			"type": "image/png"
+		},
+		{
+			"src": "img/teste7.png",
+			"sizes": "512x512",
+			"type": "image/png"
+		}
+	],
+	"display": "standalone",
+	"orientation": "portrait",
+	"start_url": "index.html",
+	"theme_color": "#4B4B4D",
+	"background_color": "#4B4B4D"
+}

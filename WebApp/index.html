@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>SERVICE WORKER WEBAPP</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="description" content="Teste para service-worker web app e modo offline">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" type="image/png" href="img/teste0.png">
+	<link rel="apple-touch-icon" href="img/teste0.png">
+	<meta name="theme-color" content="#4B4B4D">
+	<meta name="mobile-web-app-capable" content="yes">
+	<!-- manifest / sw-->
+	<link rel="manifest" href="manifest.json">
+	<script type="text/javascript" src="service-worker.js"></script>
+	<!-- A2HS -->
+	<link rel="stylesheet" type="text/css" href="addtohomescreen.css">
+	<script type="text/javascript" src="addtohomescreen.js"></script>
+	<style type="text/css">
+	body{
+		background-color: #4b4b4d;
+	}
+	*{
+		font-family: arial, sans-serif;
+		color: #fff;
+	}
+	.none{
+		display: none;
+	}
+	#btnAdd{
+		color: blue;
+	}
+	</style>
+</head>
+<body>
+
+	<h1>TESTE SERVICE-WORKER <span class="algo"></span></h1>
+	<!-- <button id="btnAdd" class="none">ADD A TELA INICIAL</button> -->
+
+<!-- script -->
+<!-- A2HS -->
+<script type="text/javascript" src="addtohomescreen.js"></script>
+<script type="text/javascript" src="a2hs.js"></script>
