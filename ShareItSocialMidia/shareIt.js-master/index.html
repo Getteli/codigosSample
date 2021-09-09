@@ -1,0 +1,56 @@
+<html>
+    <head>
+        <title>ShareIt - Social Content UnLocker by My Coding Tricks</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="assets/css/shareIt.css" rel="stylesheet"/>
+        <style>
+            body{
+                background: #2d2d2d;
+                box-shadow: inset 0px 0px 300px rgba(0,0,0,0.3);
+            }
+        </style>
+    </head>
+    <body>
+        <div class="lock mct_shareit_locker">
+            Thank You!
+        </div>
+        <script type="text/javascript" src="assets/js/jquery.min.js"></script>
+        <script type="text/javascript" src="assets/js/shareIt.js"></script>
+        <script>
+            var options = {
+                    facebook:{
+                        url: "http://mycodingtricks.com/",
+                        pageId: "https://www.facebook.com/MyCodingTricks",
+                        appId:676027382527018
+                    },
+                    twitter:{
+                        via: 'mycodingtricks',
+                        url: "http://mycodingtricks.com/",
+                        text: document.title
+                    },
+                    googleplus:{
+                        apikey: 'AIzaSyD_H_TgxVsG0jMy6dMTKjkhHilxIk_bQBk',
+                        url: "http://mycodingtricks.com/"
+                    },
+                    linkedIn:{
+                        url: "http://mycodingtricks.com/"
+                    },
+                    buttons:["facebook_share","facebook_like","twitter_tweet","twitter_follow","googleplus","linkedin"]
+                };
+            var shareIt = $(".lock").shareIt(options);
+        </script>
+        <script>
+            var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-XXXXXXXX-X']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+        </script>
+    </body>
+</html>
+

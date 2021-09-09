@@ -1,0 +1,55 @@
+<html>
+    <head>
+        <title>ShareIt - por favoooor nego</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="assets/css/shareIt.css" rel="stylesheet"/>
+        <style>
+            body{
+                background: #2d2d2d;
+                box-shadow: inset 0px 0px 300px rgba(0,0,0,0.3);
+            }
+        </style>
+    </head>
+    <body>
+        <div class="lock mct_shareit_locker">
+            Brigado DEUS!!!!
+        </div>
+        <script type="text/javascript" src="jquery.min.js"></script>
+        <script type="text/javascript" src="shareIt.js"></script>
+        <script>
+            var options = {
+            title: "Share/Like/Follow to Download", //Heading of Content Locker
+            text: 'Choose Any Social Social Network from below to share our content and Download it.', //Subheading of Content Locker
+            facebook:{
+                url: window.location.href,  //Your Content Page Url
+                pageId: '<a class="vglnk" href="https://www.facebook.com/MyCodingTricks" rel="nofollow"><span>https</span><span>://</span><span>www</span><span>.</span><span>facebook</span><span>.</span><span>com</span><span>/</span><span>MyCodingTricks</span></a>',  //Your Facebook Page Url
+                appId: 676027382527018  //Your Facebook App ID
+            },
+            twitter:{
+                via: 'mycodingtricks', //Twitter Username
+                url: window.location.href,
+                text: document.title
+            },
+            googleplus:{
+                apikey: 'AIzaSyD_H_TgxVsG0jMy6dMTKjkhHilxIk_bQBk', //Google App API key
+                url: window.location.href,
+            },
+            linkedIn:{
+                url: window.location.href
+            },
+            buttons:["facebook_share","facebook_like","twitter_tweet","twitter_follow","googleplus","linkedin"],
+
+            /*
+            * To Enable Cookies 
+            */
+            id: 5, //Give it a Unique id. It could be anything like digits.
+            cookie: true, //Cookie is Enabled
+            cookieExpiry: 10 //Cookie Will Expire in 10 Days
+            };
+
+            $(".lock").shareIt(options);
+        </script>
+    </body>
+</html>
+
