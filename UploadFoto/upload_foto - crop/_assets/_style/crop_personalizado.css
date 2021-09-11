@@ -1,0 +1,135 @@
+
+/*crop personalizado*/
+.bg_cont_crop{
+	display: none;
+	width: 103%;
+	height: 103%;
+	position: fixed;
+	background-color: rgba(0,0,0,0.85);
+	z-index: 10;
+	margin: -8px; /*posso usar -8px quando nao tiver controle sobre o body para por margin 0*/
+	top: 0;
+}
+
+.back_crop{
+	background-color: #fff;
+	z-index: 20;
+	position: fixed;
+	width: 80%;
+	height: calc(100% - 15%);
+	margin: 5% auto;
+	left: 0;
+	right: 0;
+	border-radius: 10px;
+	box-shadow: 0px 0px 30px 1px #0808087d;
+	top: 0;
+	overflow-y: auto;
+}
+
+.container_crop_img{
+	width: 75%;
+	height: calc(85% - 20px);
+	z-index: 99;
+	position: absolute;
+	display: block;
+	top: 0;
+	left: 0;
+	right: 0;
+	margin: 1% auto;
+}
+
+/*X*/
+.back_crop > span{
+	position: absolute;
+	text-align: right;
+	right: 4%;
+	top: 5px;
+	font-size: 20px;
+	color: red;
+	font-weight: bold;
+	transition: transform .1s; /* Animation */
+	cursor: pointer;
+}
+
+.btns_crop{
+	width: 100px;
+	height: 30px;
+	background-color: rgb(46,148,208);
+	border: none;
+	color: #fff;
+	font-size: 14px;
+	font-family: 'arial', sans-serif;
+	text-transform: uppercase;
+	font-weight: 400;
+	border-radius: 7px;
+	user-select: none;
+	outline: 0;
+}
+
+.cut_img_crop{
+	margin-left: 2.5%;
+}
+.rotate_img_crop{
+	margin-right: 2.5%;
+}
+
+.cont_btn_crop{
+	width: 100%;
+	display: inline;
+	position: absolute;
+	bottom: 7.5px;
+	text-align: center;
+}
+
+.rotate_img_crop:hover, .rotate_img_crop:active, .rotate_img_crop:focus,
+.cut_img_crop:hover, .cut_img_crop:active, .cut_img_crop:focus,
+.add_new_crop:hover, .add_new_crop:active, .add_new_crop:focus,
+.remove_crop:hover, .remove_crop:active, .remove_crop:focus{
+	background-color: rgb(27,88,124);
+	outline: 0;
+}
+
+.add_new_crop{
+	font-family: FontAwesome;
+	content: '\f030';
+	background-color: rgb(46,148,208);
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	text-align: center;
+	line-height: 2.9;
+	position: absolute;
+	right: -16px;
+	top: -16px;
+	margin: 5% auto;
+}
+
+.add_new_crop:before{
+	font-family: FontAwesome;
+	content: '\f030';
+	color: #fff;
+}
+
+@media screen and (max-width: 680px){
+	/*deixar 100% se for mobile menor*/
+	.back_crop{
+		width: 100%;
+		height: calc(100% - 5%);
+	}
+	.container_crop_img{
+		margin-top: 37px;
+		width: 100%;
+		height: calc(85% - 5%);
+	}
+	.cont_btn_crop{
+		bottom: -20.5px;
+		margin-bottom: 10px;
+	}
+}
+
+@media screen and (max-height: 450px) and (orientation: landscape) {
+	.cont_btn_crop{
+		bottom: -60px;
+		margin-bottom: 10px;
+	}
+}

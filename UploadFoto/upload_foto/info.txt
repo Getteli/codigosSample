@@ -1,0 +1,13 @@
+UPLOAD FOTO
+version #
+data 15/11/18
+
+INFO:
+	. Arquivos para upload de foto no banco de dados (o caminho), no sistema (pasta, o arquivo em img).
+	. Remover a imagem (do banco e do sistema).
+	. Somente fotos em modo retrato, se for modo paisagem retorna.
+	. Obs: Uso o modo file, no input pois o image no celular abre a camera mas nao posso escolher arquivos.
+	. Obs: Ao usar o os alerts, usar o alert_personalizado (para colocar os modos de reload page ao remover a imagem).
+	. Obs: Lembrar de mudar as variaveis de id, query, os alerts padrao para o personalizado e etc.
+
+ATUALIZAÇÃO:
