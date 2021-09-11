@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- metas -->
+	<meta charset="utf-8">
+	<!-- title -->
+	<title>Notification Database</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<!-- links-scripts -->
+	<link rel="icon" type="image/png" href="_assets/_img/favicon.png">
+	<link rel="stylesheet" href="_assets/_style/notification.css">
+	<style type="text/css">
+		label{
+			display: flex;
+		}
+		.icon_msg:before{
+			font-family: FontAwesome;
+			content: '\f0e0';
+			color: blue;
+		}
+		.msg{
+			font-family: 'arial', sans-serif;
+			font-size: 12px;
+			font-weight: 400;
+			margin-top: 5px;
+			color: blue;
+		}
+	</style>
+</head>
+<body>
+<label>
+	<p class="icon_msg"></p>
+	<div class="msg" id="n-notification"></div>
+</label>
+
+<!-- background -->
+<!-- <div class="bg_notification_person">
+	<div class="notification_person">
+		<span class="close_notification">&#10006;</span>
+		<div class="body_notification">
+			<h3>Title</h3>
+			<p>Body</p>
+		</div>
+	</div>
+</div> -->
+
+<!-- script -->
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="_assets/_js/notification.js" defer></script>

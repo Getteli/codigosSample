@@ -1,0 +1,86 @@
+body{
+	/*margin: 0;*/
+}
+/*alerta personalizado*/
+.bg_notification_person{
+	width: 103%;
+	height: 103%;
+	position: fixed;
+	/*background-color: rgba(0,0,0,0.4);*/
+	z-index: 10;
+	margin: -8px; /*posso usar -8px quando nao tiver controle sobre o body para por margin 0*/
+	top: 0;
+}
+.notification_person{
+	background-color: #fff;
+	z-index: 20;
+	position: fixed;
+	width: 320px;
+	/*height: 200px;*/
+	height: auto;
+	right: 15px;
+	bottom: 15px;
+	top: auto;
+	border-radius: 10px;
+	box-shadow: 0px 0px 30px 1px #0808087d;
+}
+/*X*/
+.notification_person > span{
+	position: absolute;
+	text-align: right;
+	right: 20px;
+	top: 5px;
+	font-size: 20px;
+	color: red;
+	font-weight: bold;
+	transition: transform .1s; /* Animation */
+	cursor: pointer;
+}
+/*CORPO*/
+.notification_person > .body_notification{
+	text-align: center;
+	margin-top: 30px;
+	/*height: 135px;*/
+	height: auto;
+	font-weight: normal;
+	color: #333;
+	word-break: break-word;
+	margin-left: 5px;
+	margin-right: 5px;
+}
+.notification_person > .body_notification > h3{
+	text-transform: uppercase;
+	font-family: arial, sans-serif;
+	font-weight: 500;
+}
+.notification_person > .body_notification > p{
+	margin-bottom: 40px;
+	max-height: 320px;
+	overflow-x: hidden;
+	overflow-y: auto;
+	font-family: arial, sans-serif;
+	font-weight: 500;
+}
+/*btn*/
+.notification_person > button{
+	width: 100%;
+	height: 40px;
+	bottom: 0;
+	position: absolute;
+	border: none;
+	color: #fff;
+	font-size: 17px;
+	font-family: arial, sans-serif;
+	font-weight: 100;
+	background-color: #2e94d0; /*cor*/
+	border-radius: 0px 0px 10px 10px;
+	transition: transform .1s; /* Animation */
+	cursor: pointer;
+	text-transform: uppercase;
+}
+/*efeitos*/
+.notification_person button:hover, .notification_person button:active,
+.notification_person span:hover, .notification_person span:active{
+	outline: none;
+	transform: scale(1.05);
+}
