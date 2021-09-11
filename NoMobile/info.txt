@@ -1,0 +1,27 @@
+NO MOBILE script
+version 1.0.0
+data 22/11/18
+
+ATUALIZAÇÃO:
+
+INFO:
+	. É DE EXTREMA IMPORTANCIA, QUE HAJA UMA DIV QUE ENCAPSULE TODO O CONTEUDO DO BODY, E inclua o php do nomobile EMBAIXO DO BODY E ACIMA DESSA DIV.
+	. Script que ajudará a impedir que um site/app/sistema/aplicação, seja aberto em dispositivos mobile.
+	. Ver o javascript para saber como funciona.
+	. Adicionar o codigo do css ao codigo do css do site e etc.
+	. Adicionar a pagina html aos script do php.
+	. O código que deverá ser posto na pagina que não sera aberta em dispositivos mobile esta logo abaixo.
+	. Colocar tambem o link chamando o script do javascript.
+
+PERGUNTAS:
+
+CRON:
+
+NOMECLATURA:
+	. Script para colocar logo acima do body
+		<?php
+			//para dispositivos mobile
+			include_once('_assets/_php/nomobile.html');
+		?>
+	. Script linkando para chamar o javascript do nomobile
+		<script src="_assets/_js/nomobile.js" type="text/javascript"></script>

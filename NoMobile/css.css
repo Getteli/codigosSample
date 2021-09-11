@@ -1,0 +1,31 @@
+.nomobile_style{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	display: none;
+	background-color: #F51E65;
+}
+
+.nm_s_div{
+	display: flex;
+	justify-content: center; /* align horizontal */
+	align-items: center; /* align vertical */
+	margin-left: 20px;
+	margin-right: 20px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+.nm_s_div2{
+	display: block;
+}
+
+.nm_s_div2 > h1, h2{
+	color: #fff;
+	text-align: center;
+}
+.nm_s_div2 > h2{
+	font-weight: normal;
+}
