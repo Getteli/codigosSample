@@ -1,0 +1,76 @@
+TIRAR SEU CERTIFICADO SSL/TLS em servidores como AWS por linux (comand line) - VIA CERTBOT
+usando LetsEncrypt
+
+OBS:
+	Tenha um securityGroup com acesso ao HTTPS (porta 443)
+
+RODAR ESSE COMANDO (no servidor via cl, usando PuTTY, adicione o suporte ao SSL/TLS instalando o módulo mod_ssl do Apache ) -
+	sudo yum install -y mod_ssl
+	ps. ( Tente isto:
+		sudo yum instalar mod24_ssl
+		Se você encontrar outra incompatibilidade como essa no futuro, use yum search all. Por exemplo:
+
+		yum pesquisar tudo mod_ssl
+		Retorna:
+
+		mod_ssl.x86_64: Módulo SSL / TLS para o servidor HTTP Apache
+		mod24_ssl.x86_64: Módulo SSL / TLS para o servidor HTTP Apache )
+
+VEJA ESTE VIDEO -
+	https://www.youtube.com/watch?v=DjQwyPX-4xU
+
+COMO FUNCIONA -
+	obs: * = todo
+		 */N = n(algum numero), significa de cada em cada. ex: */5 = de 5 em cinco
+
+	-------------------------- MINUTOS
+	| ------------------------ HORA
+	| | ---------------------- DIA (mês)
+	| | | -------------------- MÊS
+	| | | | ------------------ DIA (semana) (0 e 7 são domingo, pode conter o nome abreviado do inglês( sun,mon,...))
+	| | | | |
+	* * * * *
+
+	Adiciona uma ação ao CRON para renovar o certificado automaticamente (todo domingo as 3:00 da manha em cada mês)-
+	0 3 * */1 0
+
+	https://crontab.guru - site para testar o tempo do cron
+
+	COMO RODAR O CRON -
+		ABRIR :
+			EDITOR=nano crontab -e (comando para abrir o cron)
+
+		RENOVACAO AUTOMATICA :
+			sudo /home/ec2-user/certbot-auto renew --force-renewal (forca a renovacao independente se estiver perto ou nao de expirar)
+		OU :
+			sudo /home/ec2-user/certbot-auto renew (este comando diz que nao precisa renovar mas é por ainda esta cedo e nao esta perto de expirar)
+		RESTARTA O SERVIDOR :
+			root apachectl -k restart > /dev/null 2>&l
+
+		MANUALMENTE :
+			sudo /home/ec2-user/certbot-auto certonly -d my-site.com (esta funcionando) (pode ser sem o sudo, sudo necessario apenas no CRON)
+			(as perguntas - digite 3 para place file no webroot,
+			digite 2 para renovar  e replace os arquivos. limite de 5 a 7 por dia,
+			digitar o local do webroot (/var/www/html) )
+
+		RESTARTA O SERVIDOR :
+			sudo service httpd restart (para reiniciar o servidor e ele rodar o script atualizado do ssl)
+
+ABRIR O .HTACESS (para forçar o redirecionamento) - 
+	sudo nano /etc/httpd/conf/httpd.conf
+	codigo: 
+	 # Force SSL
+	 RewriteEngine On
+	 RewriteCond %{HTTPS} !=on
+	 RewriteRule ^/?(.*) https://%{SERVER_NAME}/$1 [R=301,L]
+	ps. Coloque o codigo dentro de <Directory "var/www/html"> (add onde fica a pasta dos arquivos do site)
+
+TESTAR SE O CERTIFICADO FOI RENOVADO -
+	https://www.ssllabs.com/ssltest/analyze.html?d=NOMEDOSITE.COM.BR (pode ser testado no cadeado ao lado da url no seu navegador)
+
+BIBLIOGRAFIA -
+	https://docs.aws.amazon.com/pt_br/AWSEC2/latest/UserGuide/SSL-on-an-instance.html
+	https://www.ssllabs.com/ssltest/analyze.html?d=
+	https://www.youtube.com/watch?v=DjQwyPX-4xU
+	https://medium.com/@gnowland/deploying-lets-encrypt-on-an-amazon-linux-ami-ec2-instance-f8e2e8f4fc1f
+	https://medium.com/@mohan08p/install-and-renew-lets-encrypt-ssl-on-amazon-ami-6d3e0a61693
