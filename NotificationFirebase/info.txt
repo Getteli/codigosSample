@@ -1,0 +1,15 @@
+NOTIFICACAO VIA FIREBASE
+version 1.0.0
+data 21/08/18
+
+ATUALIZAÇÃO:
+
+INFO:
+	Para testar, suba o banco de dados de teste (dentro da pasta).
+	Ao subir para um projeto, comentar os console.log, alerts e etc.
+	Ao subir para um projeto, alterar as variaveis e etc.
+	Todas as variaveis necessarias para uma troca básica, estão em send.php
+	para os icones, é necessario um caminho de url válido
+	a pagina para o click precisa ser uma pagina dentro dos arquivos
+
+NOMECLATURA:
